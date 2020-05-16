@@ -1,38 +1,489 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  color: #24292e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.gitRepo {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 20px 40px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.right-panel{
+  width: 100%;
+  padding-left: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.userSection img {
+  border-radius: 6px;
+}
+
+.userNameSection {
+  line-height: 0.1;
+  font-weight: 600;
+
+}
+.userNameSection > .userName {
+  display: block;
+  font-size: 26px;
+  line-height: 30px;
+  color: #24292e;
+}
+
+.userNameSection > .userId {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: #666;
+}
+
+.userSection > .userProfileDetails > .followButton {
+    color: #24292e;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 260px;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    background-color: #eff3f6;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    -webkit-appearance: none;
+}
+
+.userSection > .userProfileDetails > .followButton:hover {
+  background-color: #e6ebf1;
+  background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+  background-position: -.5em;
+  border-color: rgba(27,31,35,.35);
+}
+
+.userSection > .userProfileDetails > .userExp {
+  font-size: 14px;
+}
+
+.userSection > .userProfileDetails > .contactDetails {
+  padding: 0;
+  list-style: none;
+}
+
+.userSection > .userProfileDetails > .contactDetails > li > .userDetails-icon {
+  fill:#6a737d;
+  width: 12px;
+  vertical-align: middle;
+}
+
+
+.userSection > .userProfileDetails > .contactDetails > li > .userDetails-text {
+  padding-left: 7px;
+  font-size: 14px;
+}
+
+.userSection > .userProfileDetails > .contactDetails > li > .userDetails-text > a {
+  text-decoration: none;
+}
+
+.userSection > .userProfileDetails > .user-report{
+  color: #586069;
+  font-size: 12px;
+}
+
+
+.userRepo-section > .tabsSection > .viewTabs {
+  padding: 0;
+  list-style: none;
+  border-bottom: 1px solid #d1d5da;
+}
+
+.userRepo-section > .tabsSection > .viewTabs > li {
+  display: inline-block;
+  padding: 15px 5px;
+  margin: 0px 20px;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  background-color: initial;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #586069;
+  cursor: pointer;
+}
+
+.userRepo-section > .tabsSection > .viewTabs > li:hover{
+  color: #24292e;
+  text-decoration: none;
+  border-bottom-color: #d1d5da;
+  transition: .2s ease;
+}
+
+.userRepo-section > .tabsSection > .viewTabs > li > .viewTab-badges {
+  padding: 2px 5px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: #586069;
+  background-color: rgba(27,31,35,.08);
+  border-radius: 20px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.userRepo-section > .tabsSection > .viewTabs > .active{
+  font-weight: 600;
+  color: #24292e;
+  border-bottom-color: #e36209;
+}
+
+.userRepo-section > .viewFilter {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+
+.userRepo-section > .viewFilter > .searchRepo{
+  padding: 6px 8px;
+  line-height: 20px;
+  color: #24292e;
+  vertical-align: middle;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  outline: none;
+  font-size: 14px;
+  width: 70%;
+}
+
+.userRepo-section > .viewFilter > .searchRepo::placeholder{
+  color: #afb4b9;
+}
+.userRepo-section > .viewFilter > .filterView {
+  display: inline-block;
+  border-radius: 4px;
+  margin-left: 15px;
+}
+
+.userRepo-section > .viewFilter > .filterLanguage {
+  display: inline-block;
+  border-radius: 4px;
+  outline: none;
+  position: relative;
+  margin-left: 10px;
+}
+
+
+.userRepo-section > .viewFilter summary {
+  font-weight: bold;
+  padding: .5em;
+  position: relative;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    -webkit-appearance: none;
+    color: #24292e;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    text-transform: capitalize;
+}
+
+.userRepo-section > .viewFilter summary i {
+  font-style: normal;
+  font-weight: 500;
+  opacity: .75;
+}
+
+details summary::-webkit-details-marker {
+  display:none;
+}
+
+.userRepo-section > .viewFilter summary  .dropdown-caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  content: "";
+  border-top-style: solid;
+  border-top-width: 4px;
+  border-right: 4px solid transparent;
+  border-bottom: 0 solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.userRepo-section > .viewFilter details[open] {
+  outline: none;
+}
+
+.userRepo-section > .viewFilter details[open] summary {
+  border-bottom: 1px solid #aaa;
+  /* margin-bottom: .5em; */
+}
+
+.userRepo-section > .listofRepos-section {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.userRepo-section > .viewFilter  .details-dropdown{
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  padding: 0;
+  z-index: 1;
+}
+
+.userRepo-section > .viewFilter > .filterLanguage > .details-dropdown{
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: auto;
+  padding: 0;
+  z-index: 1;
+}
+
+.userRepo-section > .viewFilter  .details-dropdown > ul {
+  padding: 0;
+  list-style: none;
+  margin: auto;
+  width: 200px;
+  height: auto;
+  max-height: 480px;
+  margin: 4px 0 16px;
+  font-size: 12px;
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(27,31,35,.15);
+  animation-name: SelectMenu-modal-animation--sm;
+  background: #fff;
+}
+
+.userRepo-section > .viewFilter .details-dropdown > ul > li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  color: #586069;
+  font-size: 12px;
+  font-weight: 400;
+  padding-left: 30px;
+
+}
+
+.userRepo-section > .viewFilter .details-dropdown > ul > li:nth-child(1){
+  font-size: 14px;
+  font-weight: 600;
+  background: #f6f8fa;
+}
+
+.userRepo-section > .viewFilter .details-dropdown > ul > li > .selectMenu-icon-check{
+  vertical-align: bottom;
+  margin-right: 8px;
+  position: absolute;
+  left: 10px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card {
+  padding: 24px 0px;
+  border-bottom: 1px solid #e1e4e8;
+  border-top: 1px solid #e1e4e8;
+  display: flex;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection {
+  width: 70%;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .repos-heading {
+  font-size: 20px;
+  word-break: break-all;
+  font-weight: 600;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .repos-heading > a {
+  color: #0366d6;
+  text-decoration: none;
+}
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails {
+  font-size: 12px;
+  color: #586069;
+}
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > p {
+  margin-top: 0px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span {
+  padding-right: 16px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > .JavaScript {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: #f1e05a;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > .css {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: #563d7c;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > i {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: #e34c26;
+  border-radius: 50%;
+  margin-right: 2px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > a {
+  text-decoration: none;
+  color: #586069;
+}
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > a:hover{
+  color: #0366d6;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > a > .stargazer-count {
+  fill: #586069;
+  vertical-align: bottom;
+  margin-right: 5px;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectSection > .projectDetails > span > a > .stargazer-count:hover{
+  fill: #0366d6;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectRating {
+  width: 30%;
+  position: relative;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectRating > .rating-btn {
+  float: right;
+  padding: 3px 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+  user-select: none;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  background-size: 110% 110%;
+  border: 1px solid rgba(27,31,35,.2);
+  border-radius: .25em;
+  -webkit-appearance: none;
+}
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectRating > .rating-btn > svg {
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+
+.userRepo-section > .listofRepos-section > .repo-card > .projectRating > .rating-btn-border {
+  border-bottom: 2px solid #d7ecad;
+  width: 60%;
+  position: absolute;
+  bottom: 3%;
+  right: 0;
+}
+
+.searched-repos{
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1224px){
+  .gitRepo{
+    padding: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  to {
-    transform: rotate(360deg);
+  .left-panel{
+    width: 100%;
+  }
+
+  .right-panel{
+    flex: 1 1 100%;
+    padding-left: 0px;
+  }
+
+  .userSection{
+    padding: 0px;
+  }
+  .userSection img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .userNameSection {
+    display: inline-block;
+    padding-left: 20px;
+  }
+
+  .userSection > .userProfileDetails > .followButton {
+    width: 100%;
+  }
+
+  .tabsSection{
+    width: 100%;
+    overflow: scroll;
+  }
+  .userRepo-section > .tabsSection > .viewTabs{
+    overflow: scroll;
+    width: max-content;
+    margin: 5px 0px;
+  }
+
+  .userRepo-section > .tabsSection > .viewTabs > li{
+    margin: 0px 10px;
+    font-size: 12px;
+  }
+
+  .userRepo-section > .viewFilter > .searchRepo{
+    width: 100%;
+    margin: 15px 0px;
+  }
+
+  .userRepo-section > .viewFilter > .filterView{
+    margin-left: 0px;
+  }
+
+  .userRepo-section > .listofRepos-section > .repo-card > .projectSection > .repos-heading {
+    margin: 0px 0px 10px;
   }
 }
